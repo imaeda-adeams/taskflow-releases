@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "description": "開発者の作業記憶を外部化するタスク管理 CLI",
+    "homepage": "https://github.com/imaeda-adeams/taskflow-releases",
+    "license": "Freeware",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/imaeda-adeams/taskflow-releases/releases/download/v0.2.0/taskflow-x86_64-pc-windows-msvc.exe#/taskflow.exe",
+            "hash": "e64f2e8bdf00e0eb94efe3357088c283caed5b5187b19f9aa7ff6365ddfe104e"
+        }
+    },
+    "bin": "taskflow.exe",
+    "checkver": {
+        "github": "https://github.com/imaeda-adeams/taskflow-releases"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/imaeda-adeams/taskflow-releases/releases/download/v$version/taskflow-x86_64-pc-windows-msvc.exe#/taskflow.exe"
+            }
+        },
+        "hash": {
+            "url": "https://github.com/imaeda-adeams/taskflow-releases/releases/download/v$version/SHA256SUMS"
+        }
+    }
+}

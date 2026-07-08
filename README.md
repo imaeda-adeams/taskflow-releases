@@ -18,6 +18,34 @@ GitHub / GitLab の Issue を正としてローカルに取り込み、タスク
 
 macOS / Linux では実行権限を付与してください: `chmod +x taskflow`
 
+### Windows: scoop でのインストール(推奨)
+
+[scoop](https://scoop.sh) 経由ならブラウザの警告なしで導入・更新できます。
+
+```powershell
+scoop bucket add taskflow https://github.com/imaeda-adeams/taskflow-releases
+scoop install taskflow
+# 更新: scoop update taskflow
+```
+
+### ダウンロード時の警告について
+
+バイナリはコード署名をしていないため、ブラウザや Windows SmartScreen が
+「信頼できることを確認してください」等の警告を表示します。これは未署名バイナリに対する標準の警告です。
+
+- ブラウザ: 「保持する」を選択 → 実行時は「詳細情報」→「実行」
+- または PowerShell で: `Unblock-File .\taskflow-x86_64-pc-windows-msvc.exe`
+
+改ざんされていないことは、各リリースに添付の `SHA256SUMS` で検証できます。
+
+```powershell
+# Windows
+certutil -hashfile taskflow-x86_64-pc-windows-msvc.exe SHA256
+# macOS / Linux
+shasum -a 256 taskflow-aarch64-apple-darwin
+```
+
+
 ### 依存コマンド(任意)
 
 - `git` — ブランチ連携に必須
